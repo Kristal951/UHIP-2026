@@ -3,24 +3,36 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --gradient-brown: linear-gradient(
+    135deg,
+    var(--color-brown-900),
+    var(--color-brown-600)
+  );
+}
+
+@theme static {
+  --color-brown-900: #2C2219;
+  --color-brown-600: #6c503b;
+  --color-gold-600: #C9A227;
+  --color-warm-white: #F8F7F2;
+  --color-muted-text: #736C66;
+  --color-border: #DDE4DF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montaga), Georgia, serif;
+  --gradient-brown: var(--gradient-brown);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+button{
+  cursor: pointer;
 }
